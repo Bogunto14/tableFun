@@ -1,3 +1,4 @@
+import javafx.util.Pair;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -31,6 +32,18 @@ public class tableFunTest {
         table.add(15,45);
         table.add(16,46);
         table.add(17,47);
+        System.out.println(table.getTable());
+    }
+
+    @Test
+    public void nearestValueX() {
+        tableFun table = new tableFun();
+        table.add(14.33,43.0);
+        table.add(12.26,41.0);
+        table.add(15.14,45.0);
+        table.add(16.76,46.0);
+        table.add(20.11,47.0);
+        assertEquals(new Pair<>(20.11,47.0), table.nearestValueX(19.1));
         System.out.println(table.getTable());
     }
 }
