@@ -35,7 +35,7 @@ public class tableFun {
         double smallerKey = table.ceilingKey(x);
         double difference1 = Math.abs(biggerKey - x);
         double difference2 = Math.abs(smallerKey - x);
-        if (difference1 >= difference2) return new Pair<>(smallerKey, table.get(smallerKey))  ;
+        if (difference1 >= difference2) return new Pair<>(smallerKey, table.get(smallerKey));
         else return new Pair<>(biggerKey, table.get(biggerKey));
     }
 }
