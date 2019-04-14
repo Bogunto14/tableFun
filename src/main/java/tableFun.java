@@ -2,7 +2,6 @@ import java.util.TreeMap;
 
 public class tableFun {
 
-
     private TreeMap<Double, Double> table;
 
     tableFun() {
@@ -15,10 +14,7 @@ public class tableFun {
             table.put(x,y);
         }
         return table.size() - currentSize == 1;
-
-
     }
-
 
     public boolean remove(double x, double y) {
         int currentSize = table.size();
@@ -31,7 +27,5 @@ public class tableFun {
     public TreeMap<Double, Double> getTable() {
         return table;
     }
-
-
 
 }

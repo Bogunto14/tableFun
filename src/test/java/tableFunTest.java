@@ -10,7 +10,6 @@ public class tableFunTest {
         assertTrue(table.add(2.3,4));
         assertTrue(table.add(2,7));
         System.out.println(table.getTable());
-
     }
 
     @Test
@@ -22,7 +21,6 @@ public class tableFunTest {
         table.add(7,8);
         assertTrue(table.remove(4,3));
         System.out.println(table.getTable());
-
     }
 
     @Test
@@ -34,6 +32,5 @@ public class tableFunTest {
         table.add(16,46);
         table.add(17,47);
         System.out.println(table.getTable());
-
     }
 }
