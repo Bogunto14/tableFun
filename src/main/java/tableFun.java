@@ -31,11 +31,13 @@ public class tableFun {
     }
 
     public Pair nearestValueX(double x) {
-        double biggerKey =table.floorKey(x);
-        double smallerKey = table.ceilingKey(x);
-        double difference1 = Math.abs(biggerKey - x);
-        double difference2 = Math.abs(smallerKey - x);
-        if (difference1 >= difference2) return new Pair<>(smallerKey, table.get(smallerKey));
-        else return new Pair<>(biggerKey, table.get(biggerKey));
+        if (table.floorKey(x) != null && table.ceilingKey(x) != null) {
+            double biggerKey = table.floorKey(x);
+            double smallerKey = table.ceilingKey(x);
+            double difference1 = Math.abs(biggerKey - x);
+            double difference2 = Math.abs(smallerKey - x);
+            if (difference1 >= difference2) return new Pair<>(smallerKey, table.get(smallerKey));
+            else return new Pair<>(biggerKey, table.get(biggerKey));
+        } else throw new IllegalArgumentException();
     }
 }

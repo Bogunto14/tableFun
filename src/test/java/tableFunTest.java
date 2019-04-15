@@ -10,7 +10,7 @@ public class tableFunTest {
         tableFun table = new tableFun();
         assertTrue(table.add(2.3,4));
         assertTrue(table.add(2,7));
-        System.out.println(table.getTable());
+        assertFalse(table.add(2,7));
     }
 
     @Test
@@ -21,7 +21,7 @@ public class tableFunTest {
         table.add(6,7);
         table.add(7,8);
         assertTrue(table.remove(4,3));
-        System.out.println(table.getTable());
+        assertFalse(table.remove(4,3));
     }
 
     @Test
@@ -43,7 +43,7 @@ public class tableFunTest {
         table.add(15.14,45.0);
         table.add(16.76,46.0);
         table.add(20.11,47.0);
-        assertEquals(new Pair<>(20.11,47.0), table.nearestValueX(19.1));
+        assertEquals(new Pair<>(20.11,47.0), table.nearestValueX(19));
         System.out.println(table.getTable());
     }
 }
