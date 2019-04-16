@@ -10,20 +10,16 @@ public class tableFun {
         table = new TreeMap<>();
     }
 
-    public boolean add(double x, double y) {
-        int currentSize = table.size();
+    public void add(double x, double y) {
         if (!(table.containsKey(x) && table.containsValue(y))) {
             table.put(x, y);
         }
-        return table.size() - currentSize == 1;
     }
 
-    public boolean remove(double x, double y) {
-        int currentSize = table.size();
+    public void remove(double x, double y) {
         if (table.containsKey(x) && table.containsValue(y)) {
             table.remove(x, y);
         } else System.out.println("Пары не существует");
-        return currentSize - table.size() == 1;
     }
 
     public TreeMap<Double, Double> getTable() {

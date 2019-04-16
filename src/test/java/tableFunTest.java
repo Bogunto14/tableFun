@@ -8,9 +8,9 @@ public class tableFunTest {
     @Test
     public void add() {
         tableFun table = new tableFun();
-        assertTrue(table.add(2.3,4));
-        assertTrue(table.add(2,7));
-        assertFalse(table.add(2,7));
+        table.add(2.3,4);
+        table.add(2,7);
+        table.add(5,8);
     }
 
     @Test
@@ -20,8 +20,7 @@ public class tableFunTest {
         table.add(5,4);
         table.add(6,7);
         table.add(7,8);
-        assertTrue(table.remove(4,3));
-        assertFalse(table.remove(4,3));
+        table.remove(4,3);
     }
 
     @Test
