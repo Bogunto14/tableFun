@@ -46,4 +46,14 @@ public class tableFunTest {
         assertEquals(new Pair<>(20.11,47.0), table.nearestValueX(19));
         System.out.println(table.getTable());
     }
+
+    @Test
+    public void interpolate(){
+        tableFun table = new tableFun();
+        table.add(5000.0, 228);
+        table.add(6000.0, 15.5);
+        table.add(7000.0, 19.2);
+        table.add(9000.0, 138);
+        assertEquals(16.8986, table.interpolate(6378.0), 1);
+    }
 }

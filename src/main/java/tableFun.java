@@ -40,4 +40,13 @@ public class tableFun {
             else return new Pair<>(biggerKey, table.get(biggerKey));
         } else throw new IllegalArgumentException();
     }
+
+    public double interpolate(double x){
+        if (!table.containsKey(x) && table.lowerKey(x) != null && table.higherKey(x) != null) {
+        double rightX = table.higherKey(x);
+        double leftX = table.lowerKey(x);
+        return table.get(leftX) + (x - leftX) / (rightX - leftX) *
+                (table.get(rightX) - table.get(leftX)); // Линейная интерполяция
+        } else throw new IllegalArgumentException();
+    }
 }
