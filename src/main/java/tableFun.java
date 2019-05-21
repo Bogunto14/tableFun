@@ -1,5 +1,6 @@
 import javafx.util.Pair;
 
+import java.util.Objects;
 import java.util.TreeMap;
 
 public class tableFun {
@@ -11,9 +12,7 @@ public class tableFun {
     }
 
     public void add(double x, double y) {
-        if (!(table.containsKey(x) && table.containsValue(y))) {
-            table.put(x, y);
-        }
+        table.put(x, y);
     }
 
     public void remove(double x, double y) {
@@ -44,5 +43,13 @@ public class tableFun {
         return table.get(leftX) + (x - leftX) / (rightX - leftX) *
                 (table.get(rightX) - table.get(leftX)); // Линейная интерполяция
         } else throw new IllegalArgumentException();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        tableFun tableFun = (tableFun) o;
+        return Objects.equals(table, tableFun.table);
     }
 }

@@ -6,14 +6,6 @@ import static org.junit.Assert.*;
 public class tableFunTest {
 
     @Test
-    public void add() {
-        tableFun table = new tableFun();
-        table.add(2.3,4);
-        table.add(2,7);
-        table.add(5,8);
-    }
-
-    @Test
     public void remove() {
         tableFun table = new tableFun();
         table.add(4,3);
@@ -21,17 +13,7 @@ public class tableFunTest {
         table.add(6,7);
         table.add(7,8);
         table.remove(4,3);
-    }
-
-    @Test
-    public void getTable() {
-        tableFun table = new tableFun();
-        table.add(14,43);
-        table.add(12,41);
-        table.add(15,45);
-        table.add(16,46);
-        table.add(17,47);
-        System.out.println(table.getTable());
+        assertEquals("{5.0=4.0, 6.0=7.0, 7.0=8.0}", table.getTable().toString());
     }
 
     @Test
